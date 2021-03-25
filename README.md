@@ -7,7 +7,7 @@ Two datasets exist in this project;
 * Message dataset
 * categories dataset
 
-The message data contains messages that are sent into the disaster response entity needing to be parsed into various categories. The categoires show how the items are parsed afterwards by an agent to the various grouping. Out plan is to make the agents life easier by building a web app that shows the predictions for the messages coming into the system, so that it is a quick spot check and send by the agent. The complete python web app, datasets, and processes are shown in the data source. Feel free to download the whole folder and run. 
+The message data contains messages that are sent into the disaster response entity needing to be parsed into various categories. The categoires show how the items are parsed afterwards by an agent to the various grouping. Our plan is to make the agents life easier by building a web app that shows the predictions for the messages coming into the system, so that it is a quick spot check and send by the agent. This shows the compelete web app that will help individuals respond quicker in disaters. The complete python web app, datasets, and processes are shown in the data source. Feel free to download the whole folder and run. 
 
 ### Instructions:
 Here are the instruction for the web app. 
