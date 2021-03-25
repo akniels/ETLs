@@ -1,7 +1,5 @@
 # ETLs
 
-The Jupyter notebooks in the file show examples of how to build and ETL pipleine for disaster response datasets. The [ETL Pipeline](https://github.com/akniels/ETLs/blob/master/ETL%20Pipeline%20Preparation.ipynb) builds the model and stores the model in a database. The [ML Pipeline](https://github.com/akniels/ETLs/blob/master/ML%20Pipeline%20Preparation.ipynb) takes the data and stores that data into into a model for machine learning. 
-
 ## The Dataset
 Two datasets exist in this project;
 * Message dataset
@@ -40,8 +38,10 @@ Here are the instruction for the web app.
     - |- train_classifier.py
     - |- classifier.pkl # saved model
 * README.md
+* ETL Pipeline Preparation
+* ML Pipeline Preparation
 
-
+The Jupyter notebooks in the file show examples of how to build and ETL pipleine for disaster response datasets. The [ETL Pipeline](https://github.com/akniels/ETLs/blob/master/ETL%20Pipeline%20Preparation.ipynb) builds the model and stores the model in a database. The [ML Pipeline](https://github.com/akniels/ETLs/blob/master/ML%20Pipeline%20Preparation.ipynb) takes the data and stores that data into into a model for machine learning. 
 
 # Acknowledgements
 
