@@ -1,5 +1,7 @@
 # ETLs
 
+This repository contains a complete web app that is designed to show how to implement predictive analytics with disaster response message data. 
+
 ## The Dataset
 Two datasets exist in this project;
 * Message dataset
