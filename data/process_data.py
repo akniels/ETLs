@@ -8,6 +8,20 @@ from sqlalchemy import create_engine
 
 
 def load_data(messages_filepath, categories_filepath):
+    """
+    Loads the data from two CSVs into a dataframe
+    
+    inputs : 
+        
+        Message_filepath - message csv
+        
+        categories_filepath - Category csv
+        
+    outputs : Dataframe with merged data
+    
+    
+    
+    """
     df = pd.read_csv(messages_filepath)
     df2 = pd.read_csv(categories_filepath)
     new_df = df.merge(df2, left_on='id', right_on='id')
@@ -15,6 +29,14 @@ def load_data(messages_filepath, categories_filepath):
     return new_df
 
 def clean_data(df):
+    """
+    Cleans the data from dataframe to be shaped to start machine learning prediction
+    
+    Input = Dataframe
+    
+    Output - Clean dataframe
+    
+    """
     
     categories = df['categories'].str.split(';', expand=True)
     row = categories.iloc[0]
@@ -24,15 +46,26 @@ def clean_data(df):
         categories[column] = categories[column].apply(lambda x: x[-1])
         categories[column] = categories[column].astype('int32')
     new_categories = pd.concat([categories.reset_index(drop=True),categories.reset_index(drop=True)], axis=1)
-    # new_categories = new_categories.drop(['categories'], axis=1)
+    #new_categories = new_categories.drop(['categories'], axis=1)
+    categories['related'] = categories['related'].replace([2],1)
     df = df.merge(categories, left_on='id', right_index=True)
+    df = df.drop_duplicates()
     return df
 
 def save_data(df, database_filepath):
+    """
+    Saves the data to a sqllite database
+    
+    input 
+        dataframe : data frame you would like to load
+        
+        database_filepath : Filepath of where the sqllight database will be saved
+    
+    """
     engine = create_engine('sqlite:///{}'.format(database_filepath))
 #     if os.path.isfile(database_filename):
 #         os.remove(database_filename)
-    df.to_sql('Message', engine, index=False) 
+    df.to_sql('Message', engine, index=False, if_exists='replace') 
 
 
 def main():
